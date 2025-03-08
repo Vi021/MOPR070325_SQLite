@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "vn.iotstar.ltmob070325.SQLite"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "vn.iotstar.ltmob070325.SQLite"

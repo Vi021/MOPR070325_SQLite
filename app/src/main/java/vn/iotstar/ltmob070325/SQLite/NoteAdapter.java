@@ -5,8 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -14,11 +16,13 @@ public class NoteAdapter extends BaseAdapter {
     private Context context;
     private int layout;
     private List<NoteModel> noteList;
+    private OnNoteActionListener onNoteActionListener;
 
-    public NoteAdapter(Context context, int layout, List<NoteModel> noteList) {
+    public NoteAdapter(Context context, int layout, List<NoteModel> noteList, OnNoteActionListener onNoteActionListener) {
         this.context = context;
         this.layout = layout;
         this.noteList = noteList;
+        this.onNoteActionListener = onNoteActionListener;
     }
 
     public class NoteViewHolder {
@@ -73,6 +77,23 @@ public class NoteAdapter extends BaseAdapter {
         NoteModel note = noteList.get(position);
         noteViewHolder.txt_content.setText(note.getContent());
 
+        noteViewHolder.imgBtn_editNote.setOnClickListener(v -> {
+            if (onNoteActionListener != null) {
+                onNoteActionListener.onEditNote(position, note);
+            }
+        });
+
+        noteViewHolder.imgBtn_removeNote.setOnClickListener(v -> {
+            if (onNoteActionListener != null) {
+                onNoteActionListener.onRemoveNote(position);
+            }
+        });
+
         return convertView;
+    }
+
+    public interface OnNoteActionListener {
+        void onEditNote(int position, NoteModel note);
+        void onRemoveNote(int position);
     }
 }

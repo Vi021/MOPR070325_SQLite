@@ -20,8 +20,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:fontFamily="casual"
                 android:gravity="center"
-                android:text="TASKS"
+                android:text="Notes"
+                android:textAllCaps="true"
                 android:textColor="#09B786"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -29,7 +31,7 @@
             <ListView
                 android:id="@+id/listView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="600dp"
                 android:layout_margin="20dp"/>
         </LinearLayout>
     </ScrollView>
