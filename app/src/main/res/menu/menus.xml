@@ -9,16 +9,4 @@
         android:icon="@drawable/icon_44cf1c_plus"
         app:showAsAction="always" />
 
-    <item
-        android:id="@+id/editNote"
-        android:title="Add a Note"
-        android:icon="@drawable/icon_237fff_pen"
-        app:showAsAction="always" />
-
-    <item
-        android:id="@+id/removeNote"
-        android:title="Remove this note"
-        android:icon="@drawable/icon_ff5113_minus"
-        app:showAsAction="always" />
-
 </menu>
